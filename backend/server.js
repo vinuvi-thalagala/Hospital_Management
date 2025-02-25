@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 
+import doctorRouter from './routes/doctor.routes.js';
+
 dotenv.config();
 
 const app = express();
@@ -16,6 +18,8 @@ const URL = process.env.MONGODB_URL;
 mongoose.connect(URL);
 
 const connection = mongoose.connection;
+
+app.use('/doctor', doctorRouter);
 
 connection.once("open", ()=> {
     console.log("Mongo db connection is successfull");
