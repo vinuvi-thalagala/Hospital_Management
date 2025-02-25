@@ -14,7 +14,7 @@ const doctorSchema = new Schema ({
         required : true
     },
 
-    docId : {
+    gender : {
         type : String,
         required : true
     }
