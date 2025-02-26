@@ -10,7 +10,7 @@ const doctorSchema = new Schema ({
     },
 
     age : {
-        type :Number,
+        type :String,
         required : true
     },
 
