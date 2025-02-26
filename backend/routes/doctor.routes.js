@@ -7,12 +7,12 @@ router.route('/add').post((req, res) => {
 
     const name = req.body.name;
     const age = req.body.age;
-    const docId = Number(req.body.docId);
+    const gender = req.body.gender;
 
     const newDoctor = new Doctor({
         name,
         age,
-        docId
+        gender
     });
 
     newDoctor.save().then(() => {
