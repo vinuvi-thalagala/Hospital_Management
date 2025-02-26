@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 
 import doctorRouter from './routes/doctor.routes.js';
+import nurseRouter from './routes/nurse.routes.js';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ mongoose.connect(URL);
 const connection = mongoose.connection;
 
 app.use('/doctor', doctorRouter);
+app.use('/nurse', nurseRouter);
 
 connection.once("open", ()=> {
     console.log("Mongo db connection is successfull");
